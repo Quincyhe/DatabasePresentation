@@ -77,12 +77,12 @@
 						Also called cross-join. Each row in the first table is paired with all the rows in the second table.
 					</p>
 					<h3 style="text-align:left">Syntax</h3>
-					<pre><code class="hljs SQL" data-trim>
+					<pre><code class="hljs SQL" data-trim style="font-family:Sans-Serif;">
 SELECT s.stu_name, b.book_name FROM student s, book b;
+SELECT s.stu_name, b.book_name FROM stu_name s CROSS JOIN book_name b;
 					</code></pre>
 					<ul>
 						<li>No join condition</li>
-						<li>No "JOIN" keyword</li>
 					</ul>
 				</section>
 				<!--########################Slide : Cartesian Join Canvas########################-->
@@ -99,7 +99,7 @@ SELECT s.stu_name, b.book_name FROM student s, book b;
 						<span class="fragment" id="step_03_cartesianjoin_03_cartesianjoin"></span>
 					</div>
 				</section>
-				
+
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
