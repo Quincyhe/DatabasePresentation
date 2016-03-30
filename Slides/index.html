@@ -42,7 +42,7 @@
 			<div class="slides">
 				<section>
 					<h1>SQL Joins</h1>
-					<small>Works with Firefox/Google Chrome only! IE11/MS Edge not supported!</small>
+					<!--small>Works with Firefox only!</small-->
 				</section>
 				<!--########################Slide : The big list########################-->
 				<section>
@@ -69,6 +69,36 @@
 					</h4>
 					</span>
 				</section>
+				<!--########################Slide : Join图表########################-->
+				<section>
+					<table>
+						<tr>
+							<th>Join Type</th>
+							<th>Graphical</th>
+							<th>Description</th>
+						</tr>
+						<tr class="fragment">
+							<td>Inner Join</td>
+							<td><img src="imgs/InnerJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
+							<td><small>Nothing...</small></td>
+						</tr>
+						<tr class="fragment">
+							<td>Left Outer Join</td>
+							<td><img src="imgs/LeftOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
+							<td><small>Nothing...</small></td>
+						</tr>
+						<tr class="fragment">
+							<td>Right Outer Join</td>
+							<td><img src="imgs/RightOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
+							<td><small>Nothing...</small></td>
+						</tr>
+						<tr class="fragment">
+							<td>Full Outer Join</td>
+							<td><img src="imgs/FullOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
+							<td><small>Nothing...</small></td>
+						</tr>
+					</table>
+				</section>
 				<!--########################Slide : Cartesian Join########################-->
 				<section>
 					<h2>Cartesian Join</h2>
@@ -77,8 +107,9 @@
 						Also called cross-join. Each row in the first table is paired with all the rows in the second table.
 					</p>
 					<h3 style="text-align:left">Syntax</h3>
-					<pre><code class="hljs SQL" data-trim style="font-family:Sans-Serif;">
+					<pre><code class="hljs SQL" data-trim>
 SELECT s.stu_name, b.book_name FROM student s, book b;
+-- or
 SELECT s.stu_name, b.book_name FROM stu_name s CROSS JOIN book_name b;
 					</code></pre>
 					<ul>
