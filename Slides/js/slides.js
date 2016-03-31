@@ -1,10 +1,10 @@
-var canvas, stage, exportRoot;
+var canvas = null, stage = null, exportRoot = null;
 
 // This function creates easel.js objects(Which may occupies lots of memories)
 function initCanvasCartesianJoin() {
 	//var cvs = document.getElementById("cartesianjoincvs");
 	//var cxt = cvs.getContext("2d");
-	
+
 	// WHAT THE HELL? IF I SET THE WIDTH OF THE CANVAS FIRST.
 	// THE HEIGHT WILL MESS UP...
 	//alert(Reveal.getScale());
@@ -16,7 +16,7 @@ function initCanvasCartesianJoin() {
 	//cxt.beginPath();
 	//cxt.arc(cvs.width / 2, cvs.height / 2, cvs.height / 2, 0, Math.PI * 2);
 	//cxt.fill();
-	
+
 	canvas = document.getElementById("cartesianjoincvs");
 	exportRoot = new lib.cartesianjoin();
 	stage = new createjs.Stage(canvas);
@@ -27,7 +27,7 @@ function initCanvasCartesianJoin() {
 	createjs.Ticker.addEventListener("tick", stage);
 }
 
-function resizeStageCartesianJoin() {
+function resizeStage() {
 	var cxt = canvas.getContext("2d");
 	// THE CANVAS IS SCALED ANYWAY...BECAUSE OF THIS DAMN JS LIBRARY.
 	cxt.canvas.height = canvas.offsetHeight * Reveal.getScale();
@@ -37,7 +37,7 @@ function resizeStageCartesianJoin() {
 	stage.update();
 }
 
-function clearStageCartesianJoin() {
+function clearStage() {
 	stage.removeAllChildren();
 	stage = null;
 	exportRoot = null;
@@ -46,20 +46,28 @@ function clearStageCartesianJoin() {
 
 Reveal.addEventListener('slidechanged', function(event) {
     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-		if(event.previousSlide.id == "ctsjncvssec")
-			clearStageCartesianJoin();
 		if(event.currentSlide.id == "ctsjncvssec") {
 			initCanvasCartesianJoin();
-			resizeStageCartesianJoin();
+			resizeStage();
+		} else {
+			if(stage != null)
+				clearStage();
 		}
 });
 
 Reveal.addEventListener('fragmentshown', function(event) {
 	// ------------------------- Slides of Cartesian Join -------------------------
-	if(event.fragment.id == "cartesianjoincvsPr") {
-		resizeStageCartesianJoin();
-	}
-	else if(event.fragment.id == "step_01_cartesianjoin") {
+	if(event.fragment.id == "start_cartesianjoin") {
+		exportRoot.dispatchEvent('playit');
 		//exportRootCartesianJoin.dispatchEvent("step01");
+	} else if(event.fragment.id == "end_cartesianjoin") {
+		exportRoot.dispatchEvent('stopit');
+	}
+})
+
+Reveal.addEventListener('fragmenthidden', function(event) {
+	// ------------------------- Slides of Cartesian Join -------------------------
+	if(event.fragment.id == "start_cartesianjoin") {
+		exportRoot.dispatchEvent('resetit');
 	}
 })

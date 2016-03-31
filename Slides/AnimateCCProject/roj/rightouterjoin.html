@@ -9,19 +9,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>innerjoin</title>
+<title>rightouterjoin</title>
 <!-- write your code here -->
 
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="innerjoin.js"></script>
+<script src="rightouterjoin.js"></script>
 <script>
 var canvas, stage, exportRoot;
 function init() {
 	// --- write your JS code here ---
 	
 	canvas = document.getElementById("canvas");
-	exportRoot = new lib.innerjoin();
+	exportRoot = new lib.rightouterjoin();
 
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);

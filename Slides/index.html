@@ -42,6 +42,8 @@
 			<div class="slides">
 				<section>
 					<h1>SQL Joins</h1>
+					<h2>Group Members :</h2>
+					<h3>Jimmy <em>the leader</em><br>Diu<br>Leo<br>Mandy<br>Quincy</h3>
 					<!--small>Works with Firefox only!</small-->
 				</section>
 				<!--########################Slide : The big list########################-->
@@ -78,24 +80,24 @@
 							<th>Description</th>
 						</tr>
 						<tr class="fragment">
-							<td>Inner Join</td>
+							<td style="width:36%">Inner Join</td>
 							<td><img src="imgs/InnerJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
-							<td><small>Nothing...</small></td>
+							<td style="vertical-align:middle"><small>Only return rows that satisfy the join condition.</small></td>
 						</tr>
 						<tr class="fragment">
-							<td>Left Outer Join</td>
+							<td style="width:36%">Left Outer Join</td>
 							<td><img src="imgs/LeftOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
-							<td><small>Nothing...</small></td>
+							<td style="vertical-align:middle"><small>Returns all rows from the left table but only the rows satisfy the join condition from the right table.</small></td>
 						</tr>
 						<tr class="fragment">
-							<td>Right Outer Join</td>
+							<td style="width:36%">Right Outer Join</td>
 							<td><img src="imgs/RightOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
-							<td><small>Nothing...</small></td>
+							<td style="vertical-align:middle"><small>Returns only the rows satisfy the join condition from the left table and all rows from the right table.</small></td>
 						</tr>
 						<tr class="fragment">
-							<td>Full Outer Join</td>
+							<td style="width:36%">Full Outer Join</td>
 							<td><img src="imgs/FullOuterJoin.svg" style="border:none;box-shadow:none;width:100%;height:100%"></td>
-							<td><small>Nothing...</small></td>
+							<td style="vertical-align:middle"><small>Returns all rows from both tables with the matching ones paired up.</small></td>
 						</tr>
 					</table>
 				</section>
@@ -114,6 +116,7 @@ SELECT s.stu_name, b.book_name FROM stu_name s CROSS JOIN book_name b;
 					</code></pre>
 					<ul>
 						<li>No join condition</li>
+						<li>Normal uses are for checking the server's performance.</li>
 					</ul>
 				</section>
 				<!--########################Slide : Cartesian Join Canvas########################-->
@@ -122,12 +125,10 @@ SELECT s.stu_name, b.book_name FROM stu_name s CROSS JOIN book_name b;
 					<pre><code class="hljs SQL" data-trim>
 SELECT s.stu_name, b.book_name FROM student s, book b;
 					</code></pre>
-					<div id="cartesianjoincvsPr" class="fragment fade-in" style="width:100%;height:100%">
+					<div style="width:100%;height:100%">
 						<canvas id="cartesianjoincvs" width="960" height="602" style="width:100%;height:86%">This browser doesn't support canvas!</canvas>
 						<span class="fragment" id="start_cartesianjoin"></span>
-						<span class="fragment" id="step_01_cartesianjoin"></span>
-						<span class="fragment" id="step_02_cartesianjoin_02_cartesianjoin"></span>
-						<span class="fragment" id="step_03_cartesianjoin_03_cartesianjoin"></span>
+						<span class="fragment" id="end_cartesianjoin"></span>
 					</div>
 				</section>
 
@@ -474,6 +475,11 @@ Reveal.addEventListener( 'customevent', function() {
 		<script src="js/reveal.js"></script>
 		<script src="js/createjs-2015.11.26.min.js"></script>
 		<script src="AnimateCCProject/cj/cartesianjoin.js"></script>
+		<script src="AnimateCCProject/nj/naturaljoin.js"></script>
+		<script src="AnimateCCProject/ij/innerjoin.js"></script>
+		<script src="AnimateCCProject/loj/leftouterjoin.js"></script>
+		<script src="AnimateCCProject/roj/rightouterjoin.js"></script>
+		<script src="AnimateCCProject/foj/fullouterjoin.js"></script>
 		<script src="js/slides.js"></script>
 
 		<script>
