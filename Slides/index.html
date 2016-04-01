@@ -42,8 +42,10 @@
 			<div class="slides">
 				<section>
 					<h1>SQL Joins</h1>
-					<h2>Group Members :</h2>
-					<h3>Jimmy <em>the leader</em><br>DiuYe<br>Leon<br>Mandy<br>Quincy</h3>
+					<h3>Group Members :</h3>
+					<h4 style="text-align:right;">Biqin Yan<br>Shang Jiang<br>Xiaolei Zhao<br>Wankui He<br>Feng Liang</h4>
+					<h3>Instructor:</h3>
+					<h4 style="text-align:right;">Prof.Swetha Reddy Medipally</h4>
 					<!--small>Works with Firefox only!</small-->
 				</section>
 				<!--########################Slide : The big list########################-->
@@ -353,6 +355,22 @@ SELECT * FROM student s FULL OUTER JOIN course c ON s.stu_id = c.stu_id;
 						<span class="fragment" id="end_fullouterjoin"></span>
 					</div>
 				</section>
+
+				<section>
+					<h2>Relationship between Inner Join and Outer Join</h2>
+					<table>
+						<tr>
+							<td><img src="imgs/fullouterjoin.svg" style="box-shadow:none;border:none"><br>full outer join</td>
+							<td>=</td>
+							<td><img src="imgs/leftouterjoin.svg" style="box-shadow:none;border:none"><br>left outer join</td>
+							<td>+</td>
+							<td><img src="imgs/rightouterjoin.svg" style="box-shadow:none;border:none"><br>right outer join</td>
+							<td>-</td>
+							<td><img src="imgs/innerjoin.svg" style="box-shadow:none;border:none"><br>inner join</td>
+						</tr>
+					</table>
+				</section>
+
 				<!--########################Slide : Self Join########################-->
 				<section>
 					<h2>Self Join</h2>
@@ -377,24 +395,9 @@ ON s1.country = s2.country AND s1.id < s2.id;
 					<img src="imgs/selfjoin.svg" style="border:none;box-shadow:none;margin-top:0px;padding-top:0px">
 				</section>
 
-				<section>
-					<h2>Relationship between Inner Join and Outer Join</h2>
-					<table>
-						<tr>
-							<td><img src="imgs/fullouterjoin.svg" style="box-shadow:none;border:none"><br>full outer join</td>
-							<td>=</td>
-							<td><img src="imgs/leftouterjoin.svg" style="box-shadow:none;border:none"><br>left outer join</td>
-							<td>+</td>
-							<td><img src="imgs/rightouterjoin.svg" style="box-shadow:none;border:none"><br>right outer join</td>
-							<td>-</td>
-							<td><img src="imgs/innerjoin.svg" style="box-shadow:none;border:none"><br>inner join</td>
-						</tr>
-					</table>
-				</section>
-
 				<!--########################Slide : Join图表########################-->
 				<section>
-					<h2>Joins</h2>
+					<h2>Summary</h2>
 					<img src="imgs/SQL_joins.svg" style="width:80%"></img>
 				</section>
 
