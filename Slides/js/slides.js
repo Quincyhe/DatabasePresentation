@@ -16,9 +16,60 @@ function initCanvasCartesianJoin() {
 	//cxt.beginPath();
 	//cxt.arc(cvs.width / 2, cvs.height / 2, cvs.height / 2, 0, Math.PI * 2);
 	//cxt.fill();
-
 	canvas = document.getElementById("cartesianjoincvs");
 	exportRoot = new lib.cartesianjoin();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+function initCanvasNaturalJoin() {
+	canvas = document.getElementById("naturaljoincvs");
+	exportRoot = new lib.naturaljoin();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+function initCanvasInnerJoin() {
+	canvas = document.getElementById("innerjoincvs");
+	exportRoot = new lib.innerjoin();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+function initCanvasLeftOuterJoin() {
+	canvas = document.getElementById("lotjoincvs");
+	exportRoot = new lib.leftouterjoin();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+function initCanvasRightOuterJoin() {
+	canvas = document.getElementById("rotjoincvs");
+	exportRoot = new lib.rightouterjoin();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	//stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+function initCanvasFullOuterJoin() {
+	canvas = document.getElementById("fotjoincvs");
+	exportRoot = new lib.fullouterjoin();
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);
 	//stage.update();
@@ -49,6 +100,21 @@ Reveal.addEventListener('slidechanged', function(event) {
 		if(event.currentSlide.id == "ctsjncvssec") {
 			initCanvasCartesianJoin();
 			resizeStage();
+		} else if(event.currentSlide.id == "ntljncvssec") {
+			initCanvasNaturalJoin();
+			resizeStage();
+		} else if(event.currentSlide.id == "inrjncvssec") {
+			initCanvasInnerJoin();
+			resizeStage();
+		} else if(event.currentSlide.id == "lotjncvssec") {
+			initCanvasLeftOuterJoin();
+			resizeStage();
+		} else if(event.currentSlide.id == "rotjncvssec") {
+			initCanvasRightOuterJoin();
+			resizeStage();
+		} else if(event.currentSlide.id == "fotjncvssec") {
+			initCanvasFullOuterJoin();
+			resizeStage();
 		} else {
 			if(stage != null)
 				clearStage();
@@ -57,17 +123,17 @@ Reveal.addEventListener('slidechanged', function(event) {
 
 Reveal.addEventListener('fragmentshown', function(event) {
 	// ------------------------- Slides of Cartesian Join -------------------------
-	if(event.fragment.id == "start_cartesianjoin") {
+	if(event.fragment.id == "start_cartesianjoin" || event.fragment.id == "start_naturaljoin" || event.fragment.id == "start_innerjoin" || event.fragment.id == "start_leftouterjoin" || event.fragment.id == "start_rightouterjoin" || event.fragment.id == "start_fullouterjoin") {
 		exportRoot.dispatchEvent('playit');
 		//exportRootCartesianJoin.dispatchEvent("step01");
-	} else if(event.fragment.id == "end_cartesianjoin") {
+	} else if(event.fragment.id == "end_cartesianjoin" || event.fragment.id == "end_naturaljoin" || event.fragment.id == "end_innerjoin" || event.fragment.id == "end_leftouterjoin" || event.fragment.id == "end_rightouterjoin" || event.fragment.id == "end_fullouterjoin") {
 		exportRoot.dispatchEvent('stopit');
 	}
 })
 
 Reveal.addEventListener('fragmenthidden', function(event) {
 	// ------------------------- Slides of Cartesian Join -------------------------
-	if(event.fragment.id == "start_cartesianjoin") {
+	if(event.fragment.id == "start_cartesianjoin" || event.fragment.id == "start_naturaljoin" || event.fragment.id == "start_innerjoin" || event.fragment.id == "start_leftouterjoin" || event.fragment.id == "start_rightouterjoin" || event.fragment.id == "start_fullouterjoin") {
 		exportRoot.dispatchEvent('resetit');
 	}
 })
